@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "888776ce-80b3-4228-990e-063889edf814",
+		"name": "Safebox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Example",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9c9fb75e-f5c1-4d0c-9246-a4df358927f6",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"pepe\",\n\t\"password\":\"quepasa\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8182/api/v1/safebox/1/open",
+					"host": [
+						"localhost"
+					],
+					"port": "8182",
+					"path": [
+						"api",
+						"v1",
+						"safebox",
+						"1",
+						"open"
+					]
+				},
+				"description": "dddd"
+			},
+			"response": []
+		},
+		{
+			"name": "Create a safebox",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"pepe\",\n\t\"password\":\"xui201\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8182/api/v1/safebox",
+					"host": [
+						"localhost"
+					],
+					"port": "8182",
+					"path": [
+						"api",
+						"v1",
+						"safebox"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a safebox Fail - Password is adjacent",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"pepe\",\n\t\"password\":\"asdfgh\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8182/api/v1/safebox",
+					"host": [
+						"localhost"
+					],
+					"port": "8182",
+					"path": [
+						"api",
+						"v1",
+						"safebox"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a safebox Fail - Password is common",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"pepe\",\n\t\"password\":\"football\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8182/api/v1/safebox",
+					"host": [
+						"localhost"
+					],
+					"port": "8182",
+					"path": [
+						"api",
+						"v1",
+						"safebox"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a safebox Fail - Password is less than 6",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"pepe\",\n\t\"password\":\"123\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8182/api/v1/safebox",
+					"host": [
+						"localhost"
+					],
+					"port": "8182",
+					"path": [
+						"api",
+						"v1",
+						"safebox"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a safebox Fail - Post data is invalid",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name1\":\"pepe\",\n\t\"password1\":\"123111\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8182/api/v1/safebox",
+					"host": [
+						"localhost"
+					],
+					"port": "8182",
+					"path": [
+						"api",
+						"v1",
+						"safebox"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a safebox",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJpZCBVc3VhcmlvIiwiaWQiOiJJZCBkZSBsYSBjYWphIiwiZXhwIjoxNTI5MzQ2MzIxfQ.TvvPVI9BhEgz-PvcodxYWATHvK9Lu5hlYT1lJA4LSjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"item\":\"New safebox content\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8182/api/v1/safebox/11d3aebe-35bf-4772-b55e-de544d952f29",
+					"host": [
+						"localhost"
+					],
+					"port": "8182",
+					"path": [
+						"api",
+						"v1",
+						"safebox",
+						"11d3aebe-35bf-4772-b55e-de544d952f29"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit a safebox Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJpZCBVc3VhcmlvIiwiaWQiOiJJZCBkZSBsYSBjYWphIiwiZXhwIjoxNTI5MzQ2MzIxfQ.TvvPVI9BhEgz-PvcodxYWATHvK9Lu5hlYT1lJA4LSjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"item\":\"New safebox content\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8182/api/v1/safebox/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8182",
+					"path": [
+						"api",
+						"v1",
+						"safebox",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
